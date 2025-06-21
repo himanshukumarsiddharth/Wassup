@@ -40,7 +40,7 @@ const server = app.listen(PORT, () => {
 });
 
 const io = require("socket.io")(server, {
-  pingTimeout: 60000, // amount of idle time socket waits before closing connection to save bandwidth
+  pingTimeout: 60000,
   cors: {
     origin: process.env.FRONTEND_URI || "http://localhost:3000",
     credentials: true,
