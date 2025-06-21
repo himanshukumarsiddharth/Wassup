@@ -11,7 +11,9 @@ const Chatbox = ({ fetchAgain, setFetchAgain }) => {
       display={{ base: selectedChat ? "flex" : "none", md: "flex" }}
       alignItems="center"
       flexDirection="column"
-      p={3}
+      p={2}
+      marginRight={2}
+      h="96%"
       bg="white"
       width={{ base: "100%", md: "68%" }}
       borderRadius="lg"
