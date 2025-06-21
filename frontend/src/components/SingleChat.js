@@ -1089,7 +1089,7 @@ import chatBackground from '../chat-background.png';
 import background from '../background.png';
 import io from "socket.io-client";
 
-const ENDPOINT = process.env.BACKEND_URI ||"http://localhost:5000";
+const ENDPOINT = process.env.REACT_APP_BACKEND_URI ||"http://localhost:5000";
 var socket, selectedChatCompare;
 
 const SingleChat = ({ fetchAgain, setFetchAgain }) => {
