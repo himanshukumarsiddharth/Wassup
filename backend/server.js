@@ -13,7 +13,10 @@ connectDB();
 const app = express();
 
 app.use(cors({
-  origin: process.env.FRONTEND_URI || "http://localhost:3000",
+  origin: [
+    "http://localhost:3000",
+    process.env.FRONTEND_URI
+  ].filter(Boolean),
   credentials: true,
 }));
 
