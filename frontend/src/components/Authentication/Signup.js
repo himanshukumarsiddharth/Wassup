@@ -81,7 +81,7 @@ const Signup = () => {
         },
       };
       const { data } = await axios.post(
-        "/api/user/register",
+        `${process.env.REACT_APP_BACKEND_URI}/api/user/register`,
         {
           name,
           email,

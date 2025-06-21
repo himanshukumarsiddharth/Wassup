@@ -27,7 +27,7 @@ const UpdateGroupChatModel = ({ fetchMessages, fetchAgain, setFetchAgain }) => {
         },
       };
       const { data } = await axios.put(
-        `/api/chat/rename`,
+        `${process.env.REACT_APP_BACKEND_URI}/api/chat/rename`,
         {
           chatId: selectedChat._id,
           chatName: groupChatName,
@@ -63,7 +63,7 @@ try {
       Authorization: `Bearer ${user.token}`,
     },
   };
-  const { data } = await axios.get(`/api/user?search=${search}`, config);
+  const { data } = await axios.get(`${process.env.REACT_APP_BACKEND_URI}/api/user?search=${search}`, config);
   setLoading(false);
   setSearchResult(data);
 } catch (error) {
@@ -103,7 +103,7 @@ const handleAddUser = async (user1) => {
       },
     };
     const { data } = await axios.put(
-      `/api/chat/groupadd`,
+      `${process.env.REACT_APP_BACKEND_URI}/api/chat/groupadd`,
       {
         chatId: selectedChat._id,
         userId: user1._id,
@@ -143,7 +143,7 @@ const handleRemove = async (user1) => {
       },
     };
     const { data } = await axios.put(
-      `/api/chat/groupremove`,
+      `${process.env.REACT_APP_BACKEND_URI}/api/chat/groupremove`,
       {
         chatId: selectedChat._id,
         userId: user1._id,
