@@ -1321,9 +1321,10 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
             w="100%"
             fontFamily="Work sans"
             display="flex"
-            justifyContent={{ base: "flex-start" }}
+            justifyContent={{ base: "space-between" }}
             alignItems="center"
           >
+            <Box display="flex" alignItems="center">
             <Box
                 as="i"
                 className="fa-solid fa-arrow-left fa-sm"
@@ -1355,6 +1356,8 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
                   />
                 </>
               ))}
+              </Box>
+              <Box as="i" className="fa-solid fa-times fa-sm" cursor="pointer" color="#666" _hover={{ color: "#333" }} marginRight="1" onClick={() => setSelectedChat("")}/>
             </Text>
             <Toaster position="top-center" />
             <Box
