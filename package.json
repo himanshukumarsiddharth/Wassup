@@ -1,0 +1,28 @@
+{
+  "name": "wassup",
+  "version": "1.0.0",
+  "description": "Chatting app",
+  "main": "server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "dev": "nodemon backend/server.js"
+  },
+  "author": "Himanshu Kumar Siddharth",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "colors": "^1.4.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "emoji-mart": "^5.6.0",
+    "emoji-picker-react": "^4.12.2",
+    "express": "^5.1.0",
+    "express-async-handler": "^1.2.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongodb": "^6.16.0",
+    "mongoose": "^8.14.2",
+    "nodemon": "^3.1.10",
+    "react-router-dom": "^7.6.0",
+    "socket.io": "^4.8.1"
+  }
+}
