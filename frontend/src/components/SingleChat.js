@@ -1089,7 +1089,7 @@ import chatBackground from '../chat-background.png';
 import background from '../background.png';
 import io from "socket.io-client";
 
-const ENDPOINT = "http://localhost:5000";
+const ENDPOINT = process.env.BACKEND_URI ||"http://localhost:5000";
 var socket, selectedChatCompare;
 
 const SingleChat = ({ fetchAgain, setFetchAgain }) => {
@@ -1125,8 +1125,6 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
         );
         setMessages(data);
         setLoading(false);
-
-        console.log(socket)
   
         socket.emit("join chat", selectedChat._id);
       } catch (error) {
@@ -1160,6 +1158,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
         );
         socket.emit("new message", data);
         setMessages([...messages, data]);
+        setFetchAgain(!fetchAgain);
       } catch (error) {
         toast.error("Failed to send the Message",{duration: 1200,style: {
           fontSize: '12px',

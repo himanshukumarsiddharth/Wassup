@@ -30,7 +30,6 @@ const GroupChatModal = ({ children }) => {
         },
       };
       const { data } = await axios.get(`/api/user?search=${search}`, config);
-      console.log(data);
       setLoading(false);
       setSearchResult(data);
     } catch (error) {
@@ -49,7 +48,6 @@ const GroupChatModal = ({ children }) => {
 
     const handleGroup = (userToAdd) => {
         if (selectedUsers.some(item=>item._id===userToAdd._id)) {
-          console.log("selected",selectedUsers)
             toast.error(`User already added`, {duration: 1200,style: {
                 fontSize: '12px',
                 padding: '6px 10px',

@@ -35,10 +35,9 @@ const UpdateGroupChatModel = ({ fetchMessages, fetchAgain, setFetchAgain }) => {
         config
       );
 
-      console.log(data._id);
       // setSelectedChat("");
       setSelectedChat(data);
-      setFetchAgain(!fetchAgain);
+      // setFetchAgain(!fetchAgain);
       setRenameLoading(false);
     } catch (error) {
       toast.error(`Error Occured! error.response.data.message`, {duration: 1200,style: {
@@ -65,7 +64,6 @@ try {
     },
   };
   const { data } = await axios.get(`/api/user?search=${search}`, config);
-  console.log(data);
   setLoading(false);
   setSearchResult(data);
 } catch (error) {
@@ -114,7 +112,7 @@ const handleAddUser = async (user1) => {
     );
 
     setSelectedChat(data);
-    setFetchAgain(!fetchAgain);
+    // setFetchAgain(!fetchAgain);
     setLoading(false);
   } catch (error) {
     toast.error(`${error.response.data.message}`,{duration: 1200,style: {
@@ -152,10 +150,9 @@ const handleRemove = async (user1) => {
       },
       config
     );
-    console.log("data",data);
 
     user1._id === user._id ? setSelectedChat() : setSelectedChat(data);
-    setFetchAgain(!fetchAgain);
+    // setFetchAgain(!fetchAgain);
     fetchMessages();
     setLoading(false);
     if(user1._id === user._id) toast.success("You left the group!",{duration: 2000,style: {

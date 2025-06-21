@@ -41,12 +41,10 @@ const Signup = () => {
         .then((res) => res.json())
         .then((data) => {
           setPic(data.url.toString());
-          console.log(data.url.toString());
           toast.success("Image uploaded successfully", {duration: 1200})
           setPicLoading(false);
         })
         .catch((err) => {
-          console.log(err);
           setPicLoading(false);
         });
     } else {
@@ -76,7 +74,6 @@ const Signup = () => {
       setLoading(false);
       return;
     }
-    console.log(name, email, password, pic);
     try {
       const config = {
         headers: {

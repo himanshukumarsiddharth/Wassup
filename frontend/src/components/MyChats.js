@@ -33,6 +33,7 @@ const MyChats = ({ fetchAgain }) => {
     setLoggedUser(JSON.parse(sessionStorage.getItem("userInfo")));
     fetchChats();
   }, [fetchAgain]);
+
   return (
     <><Toaster position="top-center" /><Box
       display={{ base: selectedChat ? "none" : "flex", md: "flex" }}
@@ -83,7 +84,7 @@ const MyChats = ({ fetchAgain }) => {
               <Flex
                 onClick={() => {setSelectedChat(chat); if(notification.length)setNotification(notification.filter((n) => n.chat._id !== chat._id));}}
                 cursor="pointer"
-                background={selectedChat === chat ? "#DAE9D5" : "#F6F9F5"}
+                background={selectedChat?._id === chat?._id ? "#DAE9D5" : "#F6F9F5"}
                 color="black"
                 gap="1rem"
                 px={3}
